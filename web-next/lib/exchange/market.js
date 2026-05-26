@@ -41,7 +41,7 @@ async function fetchJson(url, timeoutMs = 2500) {
   try {
     const response = await fetch(url, {
       signal: controller.signal,
-      next: { revalidate: 3 },
+      cache: "no-cache",
       headers: { Accept: "application/json" },
     });
 
